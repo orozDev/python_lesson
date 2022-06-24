@@ -12,12 +12,12 @@ students = [
     {
         'name': 'Ruslan',
         'group': 'FullStack',
-        'phone_number': '0508 21 67 57',
+        'phone_number': '0703 41 43 73',
     },
     {
         'name': 'Almagul',
         'group': 'FullStack',
-        'phone_number': '0508 21 67 57',
+        'phone_number': '0755 22 02 04',
     },
 ]
 
