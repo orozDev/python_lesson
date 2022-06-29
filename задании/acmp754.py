@@ -1,5 +1,5 @@
 def is_valid(n):
-    if n > 93 and n < 727:
+    if n > 93 and n < 728:
         return True
     return False
 
