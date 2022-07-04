@@ -1,6 +1,3 @@
-from operator import is_
-
-
 class User():
     name = ''
     age = 0
@@ -16,20 +13,20 @@ class User():
         self.password = password
 
     def get_data(self):
-        print(self.__dict__)
+        print('\n', self.__dict__)
 
     def logout(self):
         return True
-    
+  
     def set_password(self, password, new_password):
         if password == self.password:
             self.password = new_password
-            print('Пароль успешно изменен!\n')
+            print('\nПароль успешно изменен!\n')
         else: 
-            print('Неверный пароль!\n')
+            print('\nНеверный пароль!\n')
 
     def get_password(self):
-        print(f'Пароль {self.password}')
+        print(f'\nПароль {self.password}')
     
 name = input('Ваше имя: ')
 age = input('Ваш возраст: ')
@@ -55,13 +52,13 @@ else:
 
 if is_authenticated:
     while True:
-        print('Выберите функцию:')
+        print('\nВыберите функцию:')
         print('1: Получить Персональные данные')
         print('2: Получить пароль')
         print('3: Изменить пароль')
         print('4: Выход\n')
 
-        n = int(input('Введите цифру:'))
+        n = int(input('Введите цифру: '))
 
         if n == 1:
             user.get_data()
