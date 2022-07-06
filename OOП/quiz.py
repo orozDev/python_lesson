@@ -8,7 +8,6 @@ class Questions():
         self.answers = answers
         self.right_answer = right_answer
 
-    
 class Quiz():
     title = ''
     questions = []
@@ -16,6 +15,21 @@ class Quiz():
     def __init__(self, title, questions):
         self.title = title
         self.questions = questions
+
+    def start_quiz(self):
+        count = 0
+        print(f'\n    Виктарина "{self.title}" началось')
+        for question in self.questions:
+            print(f'{question.question}\n')
+            for answer in question.answers:
+                idx = question.answers.index(answer)
+                print(f'{idx}: {answer}')
+            temp = int(input('\nВведите вариант: '))
+            if temp == question.right_answer:
+                count += 1 
+        print(f'\nВаш балл составляет {count}')
+    
+
 
 fist_task = Questions(
     '\nКто изабрель python ?',
@@ -37,17 +51,7 @@ def select_quiz(quizs):
         print(f'\n{n}-го викторины не существует')
     else:
         quiz = quizs[n]
-        count = 0
-        print(f'\n    Виктарина "{quiz.title}" началось')
-        for question in quiz.questions:
-            print(f'{question.question}\n')
-            for answer in question.answers:
-                idx = question.answers.index(answer)
-                print(f'{idx}: {answer}')
-            temp = int(input('\nВведите вариант: '))
-            if temp == question.right_answer:
-                count += 1 
-        print(f'\nВаш балл составляет {count}')
+        quiz.start_quiz()
 
 
 quiz = Quiz(
