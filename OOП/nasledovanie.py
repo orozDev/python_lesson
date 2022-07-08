@@ -24,6 +24,10 @@ class Smartphone(Procduct):
     front_camera = 0
     battery = 0
 
+    def getInfo(self):
+        super().getPrice()
+        print(self.__dict__)
+
 class Car(Procduct):
     motor = ''
     color = ''

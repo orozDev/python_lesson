@@ -1,16 +1,10 @@
 class User():
-    name = ''
-    age = 0
-    email = 'example@example.com'
-    username = ''
-    password = ''
-
     def __init__(self, name, age, email, username, password):
         self.name = name
         self.age = age
         self.email = email
         self.username = username
-        self.password = password
+        self.__password = password
 
     def get_data(self):
         print('\n', self.__dict__)
@@ -18,15 +12,15 @@ class User():
     def logout(self):
         return True
   
-    def set_password(self, password, new_password):
-        if password == self.password:
-            self.password = new_password
+    def set_password(password, new_password):
+        if password == User.__password:
+            User.__password = new_password
             print('\nПароль успешно изменен!\n')
         else: 
             print('\nНеверный пароль!\n')
 
-    def get_password(self):
-        print(f'\nПароль {self.password}')
+    def get_password():
+        return User.__password
     
 name = input('Ваше имя: ')
 age = input('Ваш возраст: ')
@@ -37,13 +31,14 @@ password = input('Придумайте пароль: ')
 user = User(name, age, email, username, password)
 
 print('Регистрация прошла успешно!\n')
+print(user.get_password())
 print('Авторизция!') 
 is_authenticated = False
 username = input('Логин: ')
 password = input('Введите пароль: ')
 
 if username == user.username:
-    if password == user.password:
+    if password == user.get_password():
         is_authenticated = True
     else:
         print('Неверный пароль!')
